@@ -1,0 +1,30 @@
+start cmd and reach to second-mean-master
+
+open new cmd and run mongo db 
+C:\Program Files\MongoDB\Server\3.2\bin>mongod.exe--storageEngine=mmapv1 -dbpath /data/db
+
+in google chrom "Moretools > extensions" write in serach bar "chrome://apps" click on postman
+
+in postman give link http://localhost:3000/api/task and send it
+see in body, post method click on x-www-from-urlencoded
+
+we made3 files
+models>task.js (here is schema data which will be in form)
+routes>task.js (get post put delete methods)
+server.js (globalfile whiche serve mongodb start etc)
+src>app not we have made yet
+
+--------
+now lets make a componet and make a table
+app>taskcomponent.html    if not ricognized then write "npm run ng g c task --spec=false"
+
+static table
+copy html,ts put proper code,give API(means import module in ) of tabel in app.module.ts then put selecter in app.component.html
+
+dynamic table
+copy html
+
+ res.json({tasks:tasks,message:'juhjhhjhjh'});
+
+crud opertation video
+https://www.youtube.com/watch?v=7wilnsiotqM  ( serach by filter, pagination)

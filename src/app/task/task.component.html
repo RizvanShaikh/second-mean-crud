@@ -1,0 +1,59 @@
+
+<!-- <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3> -->
+  <!-- add button -->
+
+  <app-add-task (AddTaskEvent)="RefreshTaskList($event)"></app-add-task>
+  
+  <div class="mat-elevation-z8">
+    <div class="container">
+    <h2>serach by filtering</h2>
+      <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+    <table mat-table [dataSource]="dataSource" matSort >
+         
+      <!-- Position Column -->
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+        
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="isCompleted">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> isCompleted </th>
+        <!-- <td mat-cell *matCellDef="let element"> {{element.isCompleted}} </td> -->
+        <mat-slide-toggle *matCellDef="let element"
+        [checked]="element.isCompleted" 
+        (change)="changeStatus(element)">{{element.isCompleted}}</mat-slide-toggle>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        
+        <td mat-cell *matCellDef="let element">
+            <edite-add-task [ChildTask]='element' (refreshEvent)='RefreshTaskList($event)'></edite-add-task>
+            <button color="accent" mat-raised-button
+           (click)="deleteTask(element)">
+           <mat-icon>close</mat-icon></button>
+        </td>
+       </ng-container>
+      <!-- edite-add-task -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  </div>

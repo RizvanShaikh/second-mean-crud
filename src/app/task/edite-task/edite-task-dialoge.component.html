@@ -1,0 +1,17 @@
+
+<div mat-dialog-content>
+  <p>What's your favorite title?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.title" name="title" id="title" 
+    placeholder="Task Title"
+    required minlength="3" #title="ngModel" cdkFocusInitial>
+  </mat-form-field>
+</div>  
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+  <button mat-button [mat-dialog-close]="data.title" 
+  (click)= "EditeTask(data)" [disabled]="title.invalid">Add</button>
+    <!-- <mat-spinner mode="indeterminate" diameter="20"></mat-spinner> -->
+</div>
+ 
+<!-- here we wil bind data in variable name "data". -->
