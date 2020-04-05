@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }  from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -29,6 +29,9 @@ import { TaskService} from './Services/task.service';
 import { DynamicDataComponent } from './dynamic-data/dynamic-data.component';
 import { AddTaskComponent, AddTaskDialogComponent } from './task/add-task/add-task.component'
 import { EditeTaskComponent, EditeTaskDialogComponent } from './task/edite-task/edite-task.component';
+import { TestComponent } from './test/test.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 
 
@@ -42,14 +45,15 @@ import { EditeTaskComponent, EditeTaskDialogComponent } from './task/edite-task/
     AddTaskComponent,
     AddTaskDialogComponent,
     EditeTaskComponent,
-    EditeTaskDialogComponent
+    EditeTaskDialogComponent,
+    TestComponent
 
    
   ],
   entryComponents:[AddTaskDialogComponent,EditeTaskDialogComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
@@ -64,6 +68,8 @@ import { EditeTaskComponent, EditeTaskDialogComponent } from './task/edite-task/
     MatIconModule,
     MatProgressSpinnerModule,
     MatSortModule,
+    AppRoutingModule,
+    
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]

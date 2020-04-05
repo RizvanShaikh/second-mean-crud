@@ -7,8 +7,10 @@ const Task   = require('../models/task');
 routes.get('/',async (req,res)=>{
 
   let tasks = await Task.find({}).sort({_id:-1});
+  
   // res.json({Tasks:tasks,Message:'juhjhhjhjh'});
-  // remeber data commng from the api should be match with schema and below json formate
+  // remeber data comming from the api should be match with schema and below json formate
+  res.status = 200;
   res.json(tasks);
 
 });

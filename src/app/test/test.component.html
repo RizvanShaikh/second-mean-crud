@@ -1,0 +1,16 @@
+<p>test works!</p>
+<div>
+<input type="text" id="text" [(ngModel)]="name1">
+</div>
+<div>
+    <input type="text" id="text1" [(ngModel)]="name2">
+</div>
+
+<div>
+    <button (click)= "AddTask(name1,name2)">
+        submit  
+    </button>
+</div>
+<li *ngIf="name3">
+    You chose: <i>{{name3}}</i>
+  </li>

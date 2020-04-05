@@ -598,8 +598,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\[FreeTutorials.Us] Udemy - complete-front-end-web-developer-bootcamp\second-mean-master\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! D:\[FreeTutorials.Us] Udemy - complete-front-end-web-developer-bootcamp\second-mean-master\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! D:\IT-DATA\second-mean-master\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! D:\IT-DATA\second-mean-master\src\styles.css */"./src/styles.css");
 
 
 /***/ })

@@ -32,6 +32,7 @@ export class AddTaskComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       console.log('Before Add Event');
+      // it will emit send data to parent component
         this.AddTaskEvent.emit();
     });
   }
@@ -60,7 +61,7 @@ export class AddTaskDialogComponent {
   }
 
   AddTask(data) {
-    
+    debugger
        console.log(data); 
        this.service.AddTask(data).subscribe(responseData=>{
         this.snackbar.open(responseData.messgae,'close',{

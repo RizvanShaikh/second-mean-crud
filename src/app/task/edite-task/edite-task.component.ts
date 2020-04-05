@@ -17,14 +17,11 @@ export interface DialogData {
 export class EditeTaskComponent implements OnInit {
   
   title: string;
-  // here we are sending data child to parent thats why we wrote @Output
+  // here we are sending data from child to parent thats why we wrote @Output
   @Output() AddTaskEvent = new EventEmitter(); 
-  //here we want to import data to child component 
+  //here we want to import data from parent to child component 
   @Input() ChildTask:any;
-    // here all data in the ChildTask
-  @Output() refreshEvent = new EventEmitter();
-  
-
+ 
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
@@ -49,10 +46,6 @@ export class EditeTaskComponent implements OnInit {
 
   }
 
-  TestEvent(){
-    this.refreshEvent.emit('test');
-  }
-
 }
 
 // for the dialoge
@@ -62,7 +55,6 @@ export class EditeTaskComponent implements OnInit {
 })
 export class EditeTaskDialogComponent {
 
-  @Output() TestEvent = new EventEmitter()
  
   constructor(
     public dialogRef: MatDialogRef<EditeTaskDialogComponent>,
@@ -84,10 +76,7 @@ export class EditeTaskDialogComponent {
           duration:5000
         })
        });
-
-       this.TestEvent.emit();
   }
-  
 
 }
 //-- to be  remebered 17:15--
